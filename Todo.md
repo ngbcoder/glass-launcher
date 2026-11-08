@@ -91,7 +91,7 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [ ] M5.6 Dismiss (tap handle done; swipe-down pending)
 - [x] M5.7 Hidden-apps visibility glyph
 - [x] M5.8 Hide/unhide individual apps
-- [ ] M5.9 Commit & push
+- [x] M5.9 Commit & push
 
 ## M6 — Settings Panel
 
