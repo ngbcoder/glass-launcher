@@ -129,12 +129,12 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 
 ## M10 — Search Behavior
 
-- [ ] M10.1 Live filter (apps, contacts, settings, calculator, timer, web)
+- [x] M10.1 Live filter (apps, contacts, settings, calculator, timer, web)
 - [ ] M10.2 Enter selects first result
-- [ ] M10.3 Math expression parser
-- [ ] M10.4 Timer command parser (`timer 5`)
-- [ ] M10.5 Web search fallback
-- [ ] M10.6 Clearing field hides results
+- [x] M10.3 Math expression parser
+- [x] M10.4 Timer command parser (`timer 5`)
+- [x] M10.5 Web search fallback
+- [x] M10.6 Clearing field hides results
 - [ ] M10.7 Commit & push
 
 ## M11 — Music Playback Simulation

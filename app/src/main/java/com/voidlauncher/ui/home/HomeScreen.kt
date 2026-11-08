@@ -21,12 +21,18 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.voidlauncher.data.SearchLogic
+import com.voidlauncher.data.SearchResult
 
 @Composable
 fun HomeScreen(
@@ -35,6 +41,8 @@ fun HomeScreen(
     onOpenDrawer: () -> Unit = {},
     onOpenSettings: () -> Unit = {}
 ) {
+    var query by remember { mutableStateOf("") }
+    val results = remember(query) { SearchLogic.resultsFor(query) }
     Box(modifier = Modifier
         .fillMaxSize()
         .pointerInput(gestureMode) {
@@ -76,7 +84,16 @@ fun HomeScreen(
                 modifier = Modifier.align(Alignment.CenterHorizontally).clickable { onOpenDrawer() }
             )
             Spacer(Modifier.height(8.dp))
-            SearchBar(onOpenDrawer = onOpenDrawer)
+            if (query.isNotEmpty()) {
+                SearchResultsOverlay(results = results, onResultClick = { /* handle */ })
+                Spacer(Modifier.height(8.dp))
+            }
+            SearchBar(
+                value = query,
+                onValueChange = { query = it },
+                onEnter = { /* select first result */ },
+                onOpenDrawer = onOpenDrawer
+            )
             Spacer(Modifier.height(12.dp))
             Dock(selectedPack = selectedPack, modifier = Modifier.align(Alignment.CenterHorizontally))
             Spacer(Modifier.height(8.dp))
