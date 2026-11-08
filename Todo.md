@@ -95,12 +95,12 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 
 ## M6 — Settings Panel
 
-- [ ] M6.1 Top-right gear entry point
-- [ ] M6.2 Drawer open method selector (4 options)
-- [ ] M6.3 Glass blur slider (6–50)
-- [ ] M6.4 Glass opacity slider (3–25%)
-- [ ] M6.5 Accent color picker (4 choices)
-- [ ] M6.6 Live preview of blur/opacity/accent
+- [x] M6.1 Top-right gear entry point
+- [x] M6.2 Drawer open method selector (4 options)
+- [x] M6.3 Glass blur slider (6–50)
+- [x] M6.4 Glass opacity slider (3–25%)
+- [x] M6.5 Accent color picker (4 choices)
+- [x] M6.6 Live preview of blur/opacity/accent
 - [ ] M6.7 Commit & push
 
 ## M7 — Context Menu

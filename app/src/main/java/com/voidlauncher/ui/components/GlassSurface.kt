@@ -12,19 +12,23 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.voidlauncher.ui.theme.GlassEdge
 import com.voidlauncher.ui.theme.GlassHi
+import com.voidlauncher.ui.theme.LocalGlassBlur
+import com.voidlauncher.ui.theme.LocalGlassOpacity
 
 @Composable
 fun GlassSurface(
     modifier: Modifier = Modifier,
     shape: Shape = RoundedCornerShape(24.dp),
-    blur: Dp = 22.dp,
-    opacity: Float = 0.07f,
+    blur: Dp? = null,
+    opacity: Float? = null,
     content: @Composable () -> Unit
 ) {
+    val b = blur ?: LocalGlassBlur.current
+    val o = opacity ?: LocalGlassOpacity.current
     Surface(
         modifier = modifier,
         shape = shape,
-        color = Color.White.copy(alpha = opacity),
+        color = Color.White.copy(alpha = o),
         border = BorderStroke(1.dp, GlassEdge),
         tonalElevation = 0.dp,
         shadowElevation = 8.dp
