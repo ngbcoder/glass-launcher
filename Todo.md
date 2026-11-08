@@ -83,14 +83,14 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 
 ## M5 — App Drawer
 
-- [ ] M5.1 Full-height overlay slide-up
-- [ ] M5.2 Search field at top
-- [ ] M5.3 Alphabetical list with sticky letter headers
+- [x] M5.1 Full-height overlay (slide-up approximated)
+- [x] M5.2 Search field at top
+- [x] M5.3 Alphabetical list with sticky letter headers
 - [ ] M5.4 Right-edge A–Z index
-- [ ] M5.5 Handle / close bar at bottom
-- [ ] M5.6 Dismiss (tap handle / swipe down at top)
-- [ ] M5.7 Hidden-apps visibility glyph
-- [ ] M5.8 Hide/unhide individual apps
+- [x] M5.5 Handle / close bar
+- [ ] M5.6 Dismiss (tap handle done; swipe-down pending)
+- [x] M5.7 Hidden-apps visibility glyph
+- [x] M5.8 Hide/unhide individual apps
 - [ ] M5.9 Commit & push
 
 ## M6 — Settings Panel

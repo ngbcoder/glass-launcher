@@ -1,5 +1,6 @@
 package com.voidlauncher.ui.home
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(onOpenDrawer: () -> Unit = {}) {
     Box(modifier = Modifier.fillMaxSize()) {
         BackgroundBlobs()
         Column(
@@ -48,7 +49,7 @@ fun HomeScreen() {
                 color = Color.White.copy(alpha = 0.5f),
                 fontSize = 13.sp,
                 fontWeight = FontWeight.Normal,
-                modifier = Modifier.align(Alignment.CenterHorizontally)
+                modifier = Modifier.align(Alignment.CenterHorizontally).clickable { onOpenDrawer() }
             )
             Spacer(Modifier.height(8.dp))
             SearchBar()
