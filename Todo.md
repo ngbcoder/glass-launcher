@@ -139,11 +139,11 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 
 ## M11 — Music Playback Simulation
 
-- [ ] M11.1 Play/pause toggles interval progress
-- [ ] M11.2 Previous resets to 0 if > 3 s else previous track
-- [ ] M11.3 Next track
-- [ ] M11.4 Scrubbable progress bar
-- [ ] M11.5 Auto-advance on track end
+- [x] M11.1 Play/pause toggles interval progress
+- [x] M11.2 Previous resets to 0 if > 3 s else previous track
+- [x] M11.3 Next track
+- [x] M11.4 Scrubbable progress bar
+- [x] M11.5 Auto-advance on track end
 - [ ] M11.6 Commit & push
 
 ## M12 — Accessibility
