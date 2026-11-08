@@ -148,9 +148,9 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 
 ## M12 — Accessibility
 
-- [ ] M12.1 Content descriptions on icon-only buttons
-- [ ] M12.2 Min touch targets ≥ 38–44 px
-- [ ] M12.3 `prefers-reduced-motion` / reduce-motion toggle
+- [x] M12.1 Content descriptions on icon-only buttons
+- [x] M12.2 Min touch targets ≥ 38–44 px (IconButton defaults)
+- [x] M12.3 `prefers-reduced-motion` (system animator scale)
 - [ ] M12.4 Focusable controls + keyboard navigation
 - [ ] M12.5 Commit & push
 
