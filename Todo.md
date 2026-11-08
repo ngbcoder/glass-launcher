@@ -156,11 +156,11 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 
 ## M13 — Build, Test & Quality
 
-- [ ] M13.1 Unit tests for search parsers
-- [ ] M13.2 Unit tests for music logic
-- [ ] M13.3 UI tests for home render
-- [ ] M13.4 Lint clean (`./gradlew lint`)
-- [ ] M13.5 Release build (`./gradlew assembleRelease`)
+- [x] M13.1 Unit tests for search parsers
+- [x] M13.2 Unit tests for music logic (data-level)
+- [ ] M13.3 UI tests for home render (pending compose ui-test)
+- [ ] M13.4 Lint clean (lint tool not cached offline)
+- [x] M13.5 Release build (`./gradlew assembleRelease`)
 - [ ] M13.6 Commit & push
 
 ## M15 — Custom Icon Packs (user-requested)
