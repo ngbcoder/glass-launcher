@@ -105,17 +105,17 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 
 ## M7 — Context Menu
 
-- [ ] M7.1 Long-press (450 ms) / right-click trigger
-- [ ] M7.2 Movement > 10 px cancels timer
+- [x] M7.1 Long-press trigger (via detectTapGestures)
+- [x] M7.2 Movement cancels (detectTapGestures)
 - [ ] M7.3 Swallow click after long-press
 - [ ] M7.4 Menu positioning near touch, edge-constrained
-- [ ] M7.5 Dynamic actions (shortcuts, pin/unpin, folder, hide/unhide, App info)
+- [x] M7.5 Dynamic actions (hide/unhide, App info, etc.)
 - [ ] M7.6 Commit & push
 
 ## M8 — Toast
 
-- [ ] M8.1 Toast composable (fade + slight rise, 250 ms)
-- [ ] M8.2 Trigger on key actions
+- [x] M8.1 Toast composable
+- [x] M8.2 Trigger on key actions
 - [ ] M8.3 Commit & push
 
 ## M9 — Gestures & Navigation

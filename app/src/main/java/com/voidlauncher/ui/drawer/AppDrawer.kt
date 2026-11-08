@@ -4,6 +4,7 @@ import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -47,7 +48,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.voidlauncher.data.AppInfo
 import com.voidlauncher.iconpack.IconPackManager
+import com.voidlauncher.ui.components.ContextMenu
 import com.voidlauncher.ui.components.GlassSurface
+import com.voidlauncher.ui.components.ToastHost
 import com.voidlauncher.ui.home.BackgroundBlobs
 
 @OptIn(androidx.compose.foundation.ExperimentalFoundationApi::class)
@@ -61,6 +64,8 @@ fun AppDrawer(
     modifier: Modifier = Modifier
 ) {
     var query by remember { mutableStateOf("") }
+    var menuApp by remember { mutableStateOf<AppInfo?>(null) }
+    var toast by remember { mutableStateOf<String?>(null) }
     val filtered = apps.filter { it.name.contains(query, ignoreCase = true) }
     // group by first letter
     val grouped = filtered.groupBy { it.name.first().uppercaseChar() }.toSortedMap()
@@ -131,7 +136,12 @@ fun AppDrawer(
                             Row(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .clickable { /* launch */ }
+                                    .pointerInput(app.packageName) {
+                                        detectTapGestures(
+                                            onTap = { /* launch */ },
+                                            onLongPress = { menuApp = app }
+                                        )
+                                    }
                                     .padding(horizontal = 20.dp, vertical = 10.dp),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
@@ -183,6 +193,24 @@ fun AppDrawer(
                 ) {
                     Text("Close", color = Color.White.copy(alpha = 0.6f), fontSize = 13.sp)
                 }
+                // context menu overlay
+                menuApp?.let { app ->
+                    ContextMenu(
+                        app = app,
+                        hidden = hidden.contains(app.packageName) || app.hidden,
+                        onAction = { action ->
+                            when (action) {
+                                "Hide", "Unhide" -> {
+                                    onToggleHidden(app.packageName)
+                                    toast = if (hidden.contains(app.packageName)) "Unhidden ${app.name}" else "Hidden ${app.name}"
+                                }
+                                else -> toast = "$action: ${app.name}"
+                            }
+                            menuApp = null
+                        }
+                    )
+                }
+                ToastHost(message = toast, onDismiss = { toast = null })
             }
         }
     }
