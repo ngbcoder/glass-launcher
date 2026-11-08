@@ -71,6 +71,7 @@ fun GlassLauncherRoot() {
                 when (page) {
                     0 -> HomeScreen(
                         gestureMode = gestureMode,
+                        selectedPack = selectedPack,
                         onOpenDrawer = { drawerOpen = true },
                         onOpenSettings = { settingsOpen = true }
                     )

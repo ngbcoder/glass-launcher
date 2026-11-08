@@ -172,7 +172,7 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [x] M15.5 Wire settings open from home gear
 - [x] M15.6 Apply selected pack in App Drawer
 - [x] M15.7 Persist selected pack (DataStore)
-- [ ] M15.8 Apply pack to Dock / Home icons
+- [x] M15.8 Apply pack to Dock / Home icons
 - [x] M15.9 Commit & push
 
 ## M14 — Final Polish & Release

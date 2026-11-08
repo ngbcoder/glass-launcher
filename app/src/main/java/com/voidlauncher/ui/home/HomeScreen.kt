@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun HomeScreen(
     gestureMode: Int = 0,
+    selectedPack: String? = null,
     onOpenDrawer: () -> Unit = {},
     onOpenSettings: () -> Unit = {}
 ) {
@@ -77,7 +78,7 @@ fun HomeScreen(
             Spacer(Modifier.height(8.dp))
             SearchBar(onOpenDrawer = onOpenDrawer)
             Spacer(Modifier.height(12.dp))
-            Dock(modifier = Modifier.align(Alignment.CenterHorizontally))
+            Dock(selectedPack = selectedPack, modifier = Modifier.align(Alignment.CenterHorizontally))
             Spacer(Modifier.height(8.dp))
             // persistent handle button
             Box(
