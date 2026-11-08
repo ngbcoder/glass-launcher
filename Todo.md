@@ -26,7 +26,7 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [x] M0.13 Create resource files (`strings.xml`, `colors.xml`, `themes.xml`)
 - [x] M0.14 Create `local.properties` (sdk.dir) — gitignored
 - [x] M0.15 First successful `./gradlew assembleDebug`
-- [ ] M0.16 Commit & push scaffolding
+- [x] M0.16 Commit & push scaffolding
 
 ## M1 — Design System / Theme
 
@@ -38,7 +38,7 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [x] M1.6 Accent color state + provider (`LocalAccent`)
 - [x] M1.7 `GlassLauncherTheme` composable
 - [ ] M1.8 Reduced-motion handling
-- [ ] M1.9 Commit & push
+- [x] M1.9 Commit & push
 
 ## M2 — Data Model
 
@@ -69,7 +69,7 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [x] M3.10 Hint text (contextual)
 - [x] M3.11 Animated background blobs
 - [x] M3.12 Home screen assembly + vertical stack
-- [ ] M3.13 Commit & push
+- [x] M3.13 Commit & push
 
 ## M4 — Widgets Page (Page 1)
 
@@ -79,7 +79,7 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [x] M4.4 Battery / screen-time card
 - [x] M4.5 Quick note card
 - [x] M4.6 Page swipe Home ↔ Widgets
-- [ ] M4.7 Commit & push
+- [x] M4.7 Commit & push
 
 ## M5 — App Drawer
 
