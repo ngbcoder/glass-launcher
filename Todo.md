@@ -101,7 +101,7 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [x] M6.4 Glass opacity slider (3–25%)
 - [x] M6.5 Accent color picker (4 choices)
 - [x] M6.6 Live preview of blur/opacity/accent
-- [ ] M6.7 Commit & push
+- [x] M6.7 Commit & push
 
 ## M7 — Context Menu
 
