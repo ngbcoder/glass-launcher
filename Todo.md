@@ -135,7 +135,7 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [x] M10.4 Timer command parser (`timer 5`)
 - [x] M10.5 Web search fallback
 - [x] M10.6 Clearing field hides results
-- [ ] M10.7 Commit & push
+- [x] M10.7 Commit & push
 
 ## M11 — Music Playback Simulation
 
