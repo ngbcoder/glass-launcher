@@ -161,7 +161,7 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [ ] M13.3 UI tests for home render (pending compose ui-test)
 - [ ] M13.4 Lint clean (lint tool not cached offline)
 - [x] M13.5 Release build (`./gradlew assembleRelease`)
-- [ ] M13.6 Commit & push
+- [x] M13.6 Commit & push
 
 ## M15 — Custom Icon Packs (user-requested)
 
