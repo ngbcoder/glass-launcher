@@ -11,32 +11,32 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 
 ## M0 — Repository & Project Scaffolding
 
-- [ ] M0.1 Initialize git repository in project root
-- [ ] M0.2 Create public GitHub remote repository
-- [ ] M0.3 Push initial commit to remote
-- [ ] M0.4 Create root `build.gradle.kts`
-- [ ] M0.5 Create `settings.gradle.kts`
-- [ ] M0.6 Create `gradle/libs.versions.toml` (version catalog)
-- [ ] M0.7 Create `gradle/wrapper/gradle-wrapper.properties`
-- [ ] M0.8 Create `app/build.gradle.kts`
-- [ ] M0.9 Create `app/proguard-rules.pro`
-- [ ] M0.10 Create `app/src/main/AndroidManifest.xml`
-- [ ] M0.11 Create `GlassLauncherApp.kt` (Application class)
-- [ ] M0.12 Create `MainActivity.kt`
-- [ ] M0.13 Create resource files (`strings.xml`, `colors.xml`, `themes.xml`)
-- [ ] M0.14 Create `local.properties` (sdk.dir) — gitignored
-- [ ] M0.15 First successful `./gradlew assembleDebug`
+- [x] M0.1 Initialize git repository in project root
+- [x] M0.2 Create public GitHub remote repository
+- [x] M0.3 Push initial commit to remote
+- [x] M0.4 Create root `build.gradle.kts`
+- [x] M0.5 Create `settings.gradle.kts`
+- [x] M0.6 Create `gradle/libs.versions.toml` (version catalog)
+- [x] M0.7 Create `gradle/wrapper/gradle-wrapper.properties`
+- [x] M0.8 Create `app/build.gradle.kts`
+- [x] M0.9 Create `app/proguard-rules.pro`
+- [x] M0.10 Create `app/src/main/AndroidManifest.xml`
+- [x] M0.11 Create `GlassLauncherApp.kt` (Application class)
+- [x] M0.12 Create `MainActivity.kt`
+- [x] M0.13 Create resource files (`strings.xml`, `colors.xml`, `themes.xml`)
+- [x] M0.14 Create `local.properties` (sdk.dir) — gitignored
+- [x] M0.15 First successful `./gradlew assembleDebug`
 - [ ] M0.16 Commit & push scaffolding
 
 ## M1 — Design System / Theme
 
-- [ ] M1.1 Color tokens (`ui/theme/Color.kt`)
-- [ ] M1.2 Typography (`ui/theme/Type.kt`)
-- [ ] M1.3 Shape / radius tokens (`ui/theme/Shape.kt`)
+- [x] M1.1 Color tokens (`ui/theme/Color.kt`)
+- [x] M1.2 Typography (`ui/theme/Type.kt`)
+- [x] M1.3 Shape / radius tokens (`ui/theme/Shape.kt`)
 - [ ] M1.4 Spacing constants (`ui/theme/Spacing.kt`)
-- [ ] M1.5 Glass material modifier (`Modifier.glass(...)`)
-- [ ] M1.6 Accent color state + provider
-- [ ] M1.7 `GlassLauncherTheme` composable
+- [x] M1.5 Glass material modifier (`Modifier.glass(...)`) — see `ui/theme/Glass.kt`
+- [x] M1.6 Accent color state + provider (`LocalAccent`)
+- [x] M1.7 `GlassLauncherTheme` composable
 - [ ] M1.8 Reduced-motion handling
 - [ ] M1.9 Commit & push
 
@@ -57,28 +57,28 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 
 ## M3 — Home Screen (Page 0)
 
-- [ ] M3.1 Status bar composable
-- [ ] M3.2 Clock card (time, date, glance chips)
-- [ ] M3.3 Glance chips (weather, next event, battery)
-- [ ] M3.4 Now Playing card (art, title/artist, transport, progress)
-- [ ] M3.5 Search bar (always visible)
+- [x] M3.1 Status bar composable
+- [x] M3.2 Clock card (time, date, glance chips)
+- [x] M3.3 Glance chips (weather, next event, battery)
+- [x] M3.4 Now Playing card (art, title/artist, transport, progress)
+- [x] M3.5 Search bar (always visible)
 - [ ] M3.6 Search results overlay
-- [ ] M3.7 Dock (3 apps + Social folder)
+- [x] M3.7 Dock (3 apps + Social folder)
 - [ ] M3.8 Folder popup (4-column grid)
-- [ ] M3.9 Page indicator dots
-- [ ] M3.10 Hint text (contextual)
-- [ ] M3.11 Animated background blobs
-- [ ] M3.12 Home screen assembly + vertical stack
+- [x] M3.9 Page indicator dots
+- [x] M3.10 Hint text (contextual)
+- [x] M3.11 Animated background blobs
+- [x] M3.12 Home screen assembly + vertical stack
 - [ ] M3.13 Commit & push
 
 ## M4 — Widgets Page (Page 1)
 
-- [ ] M4.1 "Today" title
-- [ ] M4.2 Weather card
-- [ ] M4.3 Calendar events card
-- [ ] M4.4 Battery / screen-time card
-- [ ] M4.5 Quick note card
-- [ ] M4.6 Page swipe Home ↔ Widgets
+- [x] M4.1 "Today" title
+- [x] M4.2 Weather card
+- [x] M4.3 Calendar events card
+- [x] M4.4 Battery / screen-time card
+- [x] M4.5 Quick note card
+- [x] M4.6 Page swipe Home ↔ Widgets
 - [ ] M4.7 Commit & push
 
 ## M5 — App Drawer
