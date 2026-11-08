@@ -110,13 +110,13 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [ ] M7.3 Swallow click after long-press
 - [ ] M7.4 Menu positioning near touch, edge-constrained
 - [x] M7.5 Dynamic actions (hide/unhide, App info, etc.)
-- [ ] M7.6 Commit & push
+- [x] M7.6 Commit & push
 
 ## M8 — Toast
 
 - [x] M8.1 Toast composable
 - [x] M8.2 Trigger on key actions
-- [ ] M8.3 Commit & push
+- [x] M8.3 Commit & push
 
 ## M9 — Gestures & Navigation
 
