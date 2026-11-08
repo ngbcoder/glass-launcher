@@ -163,6 +163,18 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [ ] M13.5 Release build (`./gradlew assembleRelease`)
 - [ ] M13.6 Commit & push
 
+## M15 — Custom Icon Packs (user-requested)
+
+- [x] M15.1 `IconPack` data class
+- [x] M15.2 `IconPackManager` (detect installed packs)
+- [x] M15.3 `IconPackManager.iconFor` (resolve per-app icon drawable)
+- [x] M15.4 Settings screen with icon pack picker
+- [x] M15.5 Wire settings open from home gear
+- [x] M15.6 Apply selected pack in App Drawer
+- [x] M15.7 Persist selected pack (DataStore)
+- [ ] M15.8 Apply pack to Dock / Home icons
+- [ ] M15.9 Commit & push
+
 ## M14 — Final Polish & Release
 
 - [ ] M14.1 Adaptive launcher icon

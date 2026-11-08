@@ -2,6 +2,10 @@ package com.voidlauncher.ui.home
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -20,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun HomeScreen(onOpenDrawer: () -> Unit = {}) {
+fun HomeScreen(onOpenDrawer: () -> Unit = {}, onOpenSettings: () -> Unit = {}) {
     Box(modifier = Modifier.fillMaxSize()) {
         BackgroundBlobs()
         Column(
@@ -29,6 +33,9 @@ fun HomeScreen(onOpenDrawer: () -> Unit = {}) {
                 .padding(horizontal = 20.dp),
             verticalArrangement = Arrangement.Top
         ) {
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                IconButton(onClick = onOpenSettings) { Icon(Icons.Filled.Settings, contentDescription = "Settings", tint = Color.White.copy(alpha = 0.7f)) }
+            }
             StatusBar()
             Spacer(Modifier.height(8.dp))
             // Page indicator dots

@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Visibility
@@ -28,17 +29,22 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.platform.LocalContext
+import androidx.core.graphics.drawable.toBitmap
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.voidlauncher.data.AppInfo
+import com.voidlauncher.iconpack.IconPackManager
 import com.voidlauncher.ui.components.GlassSurface
 import com.voidlauncher.ui.home.BackgroundBlobs
 
@@ -47,6 +53,7 @@ import com.voidlauncher.ui.home.BackgroundBlobs
 fun AppDrawer(
     apps: List<AppInfo>,
     hidden: Set<String>,
+    selectedPack: String?,
     onToggleHidden: (String) -> Unit,
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier
@@ -121,14 +128,26 @@ fun AppDrawer(
                                     .padding(horizontal = 20.dp, vertical = 10.dp),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Box(
-                                    modifier = Modifier
-                                        .size(38.dp)
-                                        .clip(RoundedCornerShape(10.dp))
-                                        .background(app.tint.copy(alpha = 0.8f)),
-                                    contentAlignment = Alignment.Center
-                                ) {
-                                    Text(app.name.take(1), color = Color.White, fontWeight = FontWeight.Bold)
+                                val context = LocalContext.current
+                                val packIcon = remember(app.packageName, selectedPack) {
+                                    IconPackManager.iconFor(context, selectedPack, app.packageName)
+                                }
+                                if (packIcon != null) {
+                                    Image(
+                                        bitmap = packIcon.toBitmap().asImageBitmap(),
+                                        contentDescription = app.name,
+                                        modifier = Modifier.size(38.dp)
+                                    )
+                                } else {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(38.dp)
+                                            .clip(RoundedCornerShape(10.dp))
+                                            .background(app.tint.copy(alpha = 0.8f)),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Text(app.name.take(1), color = Color.White, fontWeight = FontWeight.Bold)
+                                    }
                                 }
                                 Spacer(Modifier.width(12.dp))
                                 Text(
