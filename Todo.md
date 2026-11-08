@@ -152,7 +152,7 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [x] M12.2 Min touch targets ≥ 38–44 px (IconButton defaults)
 - [x] M12.3 `prefers-reduced-motion` (system animator scale)
 - [ ] M12.4 Focusable controls + keyboard navigation
-- [ ] M12.5 Commit & push
+- [x] M12.5 Commit & push
 
 ## M13 — Build, Test & Quality
 
