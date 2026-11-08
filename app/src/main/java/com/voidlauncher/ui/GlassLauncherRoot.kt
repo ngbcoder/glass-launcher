@@ -70,6 +70,7 @@ fun GlassLauncherRoot() {
             HorizontalPager(state = pagerState, modifier = Modifier.fillMaxSize()) { page ->
                 when (page) {
                     0 -> HomeScreen(
+                        gestureMode = gestureMode,
                         onOpenDrawer = { drawerOpen = true },
                         onOpenSettings = { settingsOpen = true }
                     )

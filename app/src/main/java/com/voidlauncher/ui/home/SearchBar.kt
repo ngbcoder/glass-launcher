@@ -16,12 +16,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.voidlauncher.ui.components.GlassSurface
 
 @Composable
-fun SearchBar(modifier: Modifier = Modifier) {
+fun SearchBar(modifier: Modifier = Modifier, onOpenDrawer: () -> Unit = {}) {
     var query by remember { mutableStateOf("") }
     GlassSurface(modifier = modifier.fillMaxWidth(), shape = RoundedCornerShape(99.dp), opacity = 0.10f) {
         Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp), verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
@@ -29,6 +30,9 @@ fun SearchBar(modifier: Modifier = Modifier) {
             TextField(
                 value = query,
                 onValueChange = { query = it },
+                modifier = Modifier
+                    .weight(1f)
+                    .onFocusChanged { if (it.isFocused) onOpenDrawer() },
                 placeholder = { Text("Search apps, contacts, web…", color = Color.White.copy(alpha = 0.5f)) },
                 colors = TextFieldDefaults.colors(
                     focusedContainerColor = Color.Transparent,
@@ -39,8 +43,7 @@ fun SearchBar(modifier: Modifier = Modifier) {
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent
                 ),
-                singleLine = true,
-                modifier = Modifier.weight(1f)
+                singleLine = true
             )
         }
     }

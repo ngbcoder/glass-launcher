@@ -1,6 +1,10 @@
 package com.voidlauncher.ui.home
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Settings
@@ -14,6 +18,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -24,8 +29,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun HomeScreen(onOpenDrawer: () -> Unit = {}, onOpenSettings: () -> Unit = {}) {
-    Box(modifier = Modifier.fillMaxSize()) {
+fun HomeScreen(
+    gestureMode: Int = 0,
+    onOpenDrawer: () -> Unit = {},
+    onOpenSettings: () -> Unit = {}
+) {
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .pointerInput(gestureMode) {
+            detectDragGestures { change, dragAmount ->
+                if (gestureMode == 0 && dragAmount.y < -40f) { onOpenDrawer(); change.consume() }
+                if (gestureMode == 1 && dragAmount.x < -40f) { onOpenDrawer(); change.consume() }
+            }
+        }) {
         BackgroundBlobs()
         Column(
             modifier = Modifier
@@ -59,9 +75,20 @@ fun HomeScreen(onOpenDrawer: () -> Unit = {}, onOpenSettings: () -> Unit = {}) {
                 modifier = Modifier.align(Alignment.CenterHorizontally).clickable { onOpenDrawer() }
             )
             Spacer(Modifier.height(8.dp))
-            SearchBar()
+            SearchBar(onOpenDrawer = onOpenDrawer)
             Spacer(Modifier.height(12.dp))
             Dock(modifier = Modifier.align(Alignment.CenterHorizontally))
+            Spacer(Modifier.height(8.dp))
+            // persistent handle button
+            Box(
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+                    .width(60.dp)
+                    .height(6.dp)
+                    .clip(androidx.compose.foundation.shape.RoundedCornerShape(3.dp))
+                    .background(Color.White.copy(alpha = 0.4f))
+                    .clickable { onOpenDrawer() }
+            )
             Spacer(Modifier.height(16.dp))
         }
     }

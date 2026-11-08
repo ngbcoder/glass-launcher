@@ -35,6 +35,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.foundation.gestures.detectVerticalDragGestures
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.graphics.drawable.toBitmap
@@ -80,7 +82,12 @@ fun AppDrawer(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(28.dp)
-                        .clickable { onDismiss() },
+                        .clickable { onDismiss() }
+                        .pointerInput(Unit) {
+                            detectVerticalDragGestures { change, dragAmount ->
+                                if (dragAmount > 20f) { onDismiss(); change.consume() }
+                            }
+                        },
                     contentAlignment = Alignment.Center
                 ) {
                     Box(modifier = Modifier.width(40.dp).height(4.dp).clip(RoundedCornerShape(2.dp)).background(Color.White.copy(alpha = 0.4f)))
