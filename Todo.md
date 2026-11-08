@@ -144,7 +144,7 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [x] M11.3 Next track
 - [x] M11.4 Scrubbable progress bar
 - [x] M11.5 Auto-advance on track end
-- [ ] M11.6 Commit & push
+- [x] M11.6 Commit & push
 
 ## M12 — Accessibility
 
