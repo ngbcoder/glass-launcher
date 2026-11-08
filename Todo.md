@@ -125,7 +125,7 @@ Status legend: `[ ]` not started · `[~]` in progress · `[x]` done
 - [x] M9.3 Handle button opens drawer
 - [x] M9.4 Page navigation (horizontal swipe / dots)
 - [x] M9.5 Drawer dismiss gestures (tap + swipe-down)
-- [ ] M9.6 Commit & push
+- [x] M9.6 Commit & push
 
 ## M10 — Search Behavior
 
